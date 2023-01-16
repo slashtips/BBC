@@ -1,0 +1,542 @@
+body,
+html {
+    width: 100%;
+    height: auto;
+
+    background: radial-gradient(1000% 120% at 50% 80%, white, #9DC8D3);
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 94px;
+    letter-spacing: 0.04em;
+    color: #424452;
+    margin-left: 4%;
+}
+
+.wrap {
+
+    padding: 0 120px;
+    display: flex;
+    justify-content: center;
+
+    label {
+        width: 100%;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #424452;
+    }
+
+    .bigIcon {
+        width: 30%;
+        background-color: #321;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .info {
+        width: 50%;
+
+        input {
+            background: #F0EBE3;
+            border-radius: 40px;
+            border: none;
+            font-weight: 600;
+            font-size: 20px;
+
+            letter-spacing: 0.04em;
+            color: #424452;
+            padding: 1rem 0 1rem 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .photoSticker {
+            .circle {
+                margin: 0 auto;
+                max-width: 200px;
+                height: 200px;
+
+                text-align: center;
+                background: #898B91;
+                border: 8px solid #FFFFFF;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .edit {
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            align-items: center;
+            margin-top: 0.5rem;
+
+            input[type="file"] {
+                display: none;
+            }
+
+            .upload {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 6px 16px;
+                gap: 6px;
+                max-width: 127px;
+
+                background: #F0EBE3;
+                border-radius: 40px;
+                cursor: pointer;
+                white-space: nowrap;
+
+                font-weight: 600;
+                font-size: 16px;
+                letter-spacing: 0.01em;
+                color: #424452;
+                h5{
+                    margin: 0;
+                }
+            }
+
+            .delete {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 6px 16px;
+                gap: 6px;
+                max-width: 127px;
+
+                background: #F0EBE3;
+                border-radius: 40px;
+                cursor: pointer;
+                white-space: nowrap;
+                h5 {
+                        margin: 0;
+                    }
+            }
+        }
+
+        .name {
+            display: flex;
+            justify-content: space-between;
+                gap: 20px;
+            .firstName,
+            .lastName {
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .email {
+            display: flex;
+            flex-wrap: wrap;
+
+            input {
+                width: 100%;
+            }
+        }
+
+        .password {
+            display: flex;
+            flex-wrap: wrap;
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+    .resetPassword {
+        text-align: right;
+        margin-bottom: 40px;
+
+        a {
+            color: #7AAEEF;
+        }
+    }
+
+    .infoBtnGroup {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            width: 45%;
+            padding: 1.25rem 0 !important;
+        }
+
+        .updateBtn {
+            background-color: #424452;
+            color: #fff;
+        }
+
+    }
+
+
+    h3 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 32px;
+        /* identical to box height, or 178% */
+
+        letter-spacing: 0.04em;
+
+        /* Text & Background/Text & Background/01 */
+
+        color: #424452;
+    }
+
+    .comminicate {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        margin-bottom: 40px;
+        display: none;
+
+        .card {
+            padding: 1.5rem;
+            background: #FFFFFF;
+            border: 1px solid #F0EBE3;
+            border-radius: 20px;
+
+            img {
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+@media screen and(max-width:768px) {
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrap {
+
+
+        display: block;
+        max-width: 700px;
+
+        .big {
+            img {
+                display: none;
+            }
+        }
+
+
+
+        .info {
+            width: 100%;
+            margin-top: 24px;
+
+            input {
+                font-weight: 600;
+                font-size: 1rem;
+                line-height: 0;
+                padding: 1rem 0 1rem 1.5rem;
+            }
+
+            .photoSticker {
+
+                .circle {
+                    margin: 0 auto;
+                    max-width: 200px;
+                    height: 200px;
+                    text-align: center;
+                    border: 8px solid #FFFFFF;
+                    border-radius: 50%;
+                }
+            }
+
+            .edit {
+                display: flex;
+                justify-content: center;
+                gap: 5%;
+                align-items: center;
+            }
+
+            .name {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                .firstName,
+                .lastName {
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+            }
+
+            .email {
+                display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            .password {
+                display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .resetPassword {
+            text-align: right;
+            margin-bottom: 40px;
+
+            a {
+                color: #7AAEEF;
+            }
+        }
+
+        .infoBtnGroup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                width: 45%;
+
+            }
+
+            .updateBtn {
+                background-color: #424452;
+                color: #fff;
+            }
+
+        }
+
+
+        h3 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 32px;
+            letter-spacing: 0.04em;
+            color: #424452;
+        }
+
+        .comminicate {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            margin-bottom: 40px;
+            display: none;
+
+            .card {
+                padding: 1.5rem;
+                background: #FFFFFF;
+                border: 1px solid #F0EBE3;
+                border-radius: 20px;
+
+                img {
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and(max-width:576px) {
+    .wrap h1 {
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: 0.04em;
+        color: #424452;
+        white-space: nowrap;
+        text-align-last: left;
+    }
+
+    .wrap {
+        display: block;
+        max-width: 327px;
+
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        margin: 0 auto;
+        padding-top: 64px;
+
+        .big {
+            width: 100%;
+
+
+            h1 {
+                width: 100%;
+
+            }
+        }
+
+        .info {
+            width: 100%;
+            margin-top: 24px;
+
+
+            .photoSticker {
+
+
+                .circle {
+                    margin: 0 auto;
+                    width: 100%;
+                    width: 120px;
+                    height: 120px;
+                    text-align: center;
+                    background: #898B91;
+                    border: 8px solid #FFFFFF;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    img {}
+                }
+            }
+
+            .edit {
+                display: flex;
+
+                gap: 5%;
+
+                margin-top: 12px;
+
+
+                .upload {
+
+                    padding: 8px 16px;
+                }
+
+                .delete {
+                    padding: 6px 16px;
+                }
+
+            }
+
+            .name {
+                display: flex;
+                margin: 0;
+                margin-top: 40px;
+                gap: 20px;
+                justify-content: space-between;
+
+                .firstName,
+                .lastName {
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+            }
+
+            .email {
+                display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            .password {
+                display: flex;
+                flex-wrap: wrap;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .resetPassword {
+            text-align: right;
+            margin-bottom: 40px;
+
+            a {
+                color: #7AAEEF;
+            }
+        }
+
+        .infoBtnGroup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                width: 45%;
+            }
+
+            .updateBtn {
+                background-color: #424452;
+                color: #fff;
+            }
+
+        }
+
+
+        h3 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 32px;
+            letter-spacing: 0.04em;
+            color: #424452;
+        }
+
+        .comminicate {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            margin-bottom: 40px;
+            display: none;
+
+            .card {
+                padding: 1.5rem;
+                background: #FFFFFF;
+                border: 1px solid #F0EBE3;
+                border-radius: 20px;
+
+                img {
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}

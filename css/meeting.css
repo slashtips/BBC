@@ -1,0 +1,165 @@
+body,
+html {
+  background: linear-gradient(175deg, #9dc8d3 0%, #fff 75vh);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.04em;
+  color: #424452;
+  padding-bottom: 12px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  margin-bottom: 12px;
+  color: #424452;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+
+ul {
+  list-style: inside;
+}
+ul li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+
+.bigTitle {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.bigTitle h1 {
+  font-family: "Roboto" !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: 0.04em;
+  max-width: 740px;
+  /* Dark/03 */
+  color: #424452;
+}
+
+.wrapp {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 10%;
+}
+.wrapp .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapp .top .source small {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+.wrapp .left {
+  max-width: 760px;
+}
+.wrapp .left .hrs {
+  border: 0.5px solid #dfdfdf;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.catelog2 h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+.catelog2 ul li {
+  margin-top: 40px;
+}
+.catelog2 ul li a {
+  text-decoration: none;
+  color: #898b91;
+  font-weight: 400;
+  font-size: 20px;
+}
+.catelog2 ul li a:hover {
+  color: #424452;
+}
+.catelog2 .relatedMeeting {
+  margin-top: 100px;
+}
+
+.relatedMeeting h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+.relatedMeeting .card a {
+  text-decoration: none;
+  max-width: 230px;
+  box-shadow: 0 0 5px rgba(221, 221, 221, 0.5);
+}
+.relatedMeeting .card a img {
+  max-height: 100%;
+}
+.relatedMeeting .card a .tag {
+  padding: 2px 6px;
+  gap: 10px;
+  width: 92px;
+  background: #ffffff;
+  border: 0.5px solid #424452;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  color: #333541;
+}
+.relatedMeeting .card a .cardText {
+  padding: 1rem;
+}
+.relatedMeeting .card a .cardText h3 {
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+.relatedMeeting .card a .cardText p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+  color: #898b91;
+}/*# sourceMappingURL=meeting.css.map */

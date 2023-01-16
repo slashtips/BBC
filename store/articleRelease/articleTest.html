@@ -1,0 +1,195 @@
+<!-- <?php  
+        $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+        include  "$root../../db/db.php";
+        $sqlA = "SELECT * FROM `article` WHERE id = ' . $id . ';";
+        $resA = mysqli_query($connect, $sqlA);
+        $rowA = mysqli_fetch_array($resA);
+
+        $sqlR1 = "SELECT * FROM `article`  ORDER BY id DESC LIMIT 0 , 9";
+        $resR1 = mysqli_query($connect, $sqlR1);
+        $rowR1 = mysqli_fetch_array($resR1);
+
+    ?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/article2.css">
+    <style>
+        body,
+        html {
+            min-height: 100%;
+            background: linear-gradient(175deg, #93B1A6 0%, #fff 20%);
+        }
+
+        .topic .text {
+            max-width: 1200px;
+
+
+        }
+
+        .topic h1 {
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+
+        }
+    </style>
+
+
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+    integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+
+
+<body>
+
+
+    <div class="cookie"></div>
+    <div class="cover"></div>
+
+
+    <div class="menum"></div>
+    <div class="menu"></div>
+    <div class="loginH"></div>
+    <div class="register"></div>
+    <div class="questionAsk"></div>
+    <div class="commonCard openPass"></div>
+    <div class="commonCard forgetPassword"></div>
+
+    <div class="commonCardSmall registerSmall"></div>
+    <div class="commonCardSmall openPassSmall"></div>
+    <div class="commonCardSmall forgetPasswordSmall"></div>
+    <div class="menu1"></div>
+
+
+
+
+    <div class="topic">
+        <div class="text">
+            <!-- <h3>' . '<?php echo $rowA["topic"];?>' . '</h3>
+            <h1>' . '<?php echo $rowA["title"];?>' . '</h1> -->
+            <h3>asdddddddddddsad</h3>
+            <h1>sdddddddddddddsd</h1>
+        </div>
+
+        <div class="bigIcon">
+            <img src="../../pic/Common/robot.png" alt="">
+        </div>
+    </div>
+
+
+
+    <div class="wrap">
+        <div class="article">
+
+            <div class="content">
+                <div class="back">
+                    <img src="../../pic/Common/back.svg" alt="">
+                    <small>asda</small>
+
+                </div>
+                <div class="hr"></div>
+
+
+            </div>
+
+
+            <div class="contnetBottom">
+
+            </div>
+
+        </div>
+
+
+
+        <div class="catelog2">
+            <div class="articlesCatelog">
+                <h2>文章目錄</h2>
+                <div class="catelogg ">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relatedArticles">
+                <h2>相關文章</h2>
+                <div class="card">
+                    <img src="../../pic/Common/Cardimg.png" alt="">
+                    <div class="cardText">
+                        <div class="tag">類別標籤 A</div>
+                        <h3>Post Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, cupiditate.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../../pic/Common/Cardimg.png" alt="">
+                    <div class="cardText">
+                        <div class="tag">類別標籤 A</div>
+                        <h3>Post Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, cupiditate.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../../pic/Common/Cardimg.png" alt="">
+                    <div class="cardText">
+                        <div class="tag">類別標籤 A</div>
+                        <h3>Post Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, cupiditate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="menuArticleSmall">
+        <div class="menuArticleSmallBtnGroup">
+            <img src="../../pic/Common/menuArticleSmallBtn1.svg" alt="">
+            <img src="../../pic/Common/menuArticleSmallBtn2.svg" alt="">
+            <img src="../../pic/Common/menuArticleSmallBtn3.svg" alt="">
+        </div>
+    </div>
+
+    <div class="fansCard">
+        <div class="fansTitle">
+            <h3>分享至</h3>
+            <img src="../../pic/Common/cancel.png" alt="">
+        </div>
+        <div class="fnas">
+            <a href=""><img src="../../pic/Common/facebook.svg" alt=""></a>
+            <a href=""><img src="../../pic/Common/line.svg" alt=""></a>
+        </div>
+    </div>
+
+    <div class="catelogCard">
+    </div>
+    <div class="footer">
+    </div>
+
+</body>
+
+
+<script src="../../js/commonArticle.js"></script>
+<script src="../../js/article.js"></script>
+
+</html>

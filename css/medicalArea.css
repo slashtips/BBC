@@ -1,0 +1,258 @@
+.bgs {
+  display: none;
+}
+
+.areaMap .areaWrap {
+  position: relative;
+}
+.areaMap .areaWrap .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.areaMap .areaWrap .icon .icon1 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+}
+.areaMap .areaWrap .icon .icon1 .iconBtn {
+  padding: 8px 24px;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #424452;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 41px;
+  letter-spacing: 0.04em;
+  color: #424452;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%) !important;
+}
+.areaMap .areaWrap .icon .icon1 .iconBtn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+  box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+  color: #ffffff;
+  border: none;
+}
+.areaMap .areaWrap .icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20%;
+  transition: 0.25s;
+  width: 100%;
+}
+.areaMap .areaWrap .icon img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.areaMap .areaWrap .icon img:hover ~ .iconBtn {
+  background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+  box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+  border-radius: 40px;
+  color: #ffffff;
+  border: none;
+}
+.areaMap .areaWrap .icon .icon2 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+}
+.areaMap .areaWrap .icon .icon2 .iconBtn {
+  padding: 8px 24px;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #424452;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 41px;
+  letter-spacing: 0.04em;
+  color: #424452;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%) !important;
+}
+.areaMap .areaWrap .icon .icon2 .iconBtn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+  box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+  color: #ffffff;
+  border: none;
+}
+.areaMap .areaWrap .icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20%;
+  transition: 0.25s;
+  width: 100%;
+}
+.areaMap .areaWrap .icon img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.areaMap .areaWrap .icon img:hover ~ .iconBtn {
+  background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+  box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+  border-radius: 40px;
+  color: #ffffff;
+  border: none;
+}
+.areaMap .areaWrap .icon .icon3 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+}
+.areaMap .areaWrap .icon .icon3 .iconBtn {
+  padding: 8px 24px;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #424452;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 41px;
+  letter-spacing: 0.04em;
+  color: #424452;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%) !important;
+}
+.areaMap .areaWrap .icon .icon3 .iconBtn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+  box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+  color: #ffffff;
+  border: none;
+}
+.areaMap .areaWrap .icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20%;
+  transition: 0.25s;
+  width: 100%;
+}
+.areaMap .areaWrap .icon img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.areaMap .areaWrap .icon img:hover ~ .iconBtn {
+  background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+  box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+  border-radius: 40px;
+  color: #ffffff;
+  border: none;
+}
+.areaMap .areaWrap .icon .icon1 {
+  position: absolute;
+  top: 55%;
+  left: 18%;
+}
+.areaMap .areaWrap .icon .icon2 {
+  position: absolute;
+  top: 34%;
+  left: 40%;
+}
+.areaMap .areaWrap .icon .icon3 {
+  position: absolute;
+  top: 61%;
+  left: 62%;
+}
+.areaMap .areaWrap .icon .icon3 .iconBtn {
+  top: 18%;
+}
+
+.bgSmall {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  .areaMap {
+    display: none;
+  }
+  .bgs {
+    display: block;
+    position: relative;
+  }
+  .bgs .areaGroup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .bgs .areaGroup .area {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  .bgs .areaGroup .area img {
+    height: 70%;
+  }
+  .bgs .areaGroup .area img:hover ~ input {
+    background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+    box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+    color: #fff;
+    border: none;
+  }
+  .bgs .areaGroup .area input {
+    background: #ffffff;
+    border: 1px solid #424452;
+    border-radius: 40px;
+    padding: 4px 20px 6px;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: #424452;
+    border: 1px solid #424452;
+  }
+  .bgs .areaGroup .area input:hover {
+    background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+    box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+    color: #fff;
+    border: none;
+  }
+  .bgs .areaGroup .area1 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    gap: 10px;
+  }
+  .bgs .areaGroup .area2 {
+    position: absolute;
+    top: 23%;
+    left: 57%;
+    gap: 10px;
+  }
+  .bgs .areaGroup .area3 {
+    position: absolute;
+    top: 70%;
+    left: 58%;
+  }
+  .bgs .areaGroup .area3 input {
+    margin-top: -10px;
+    margin-left: -5%;
+    width: 90%;
+  }
+}/*# sourceMappingURL=medicalArea.css.map */

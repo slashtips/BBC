@@ -1,0 +1,288 @@
+.bgs {
+    display: none;
+}
+
+.areaMap {
+    // background: url('../../pic/MedicalArea/Frame.svg');
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: 50% 0%;
+
+    .areaWrap {
+        position: relative;
+
+        img {
+            // max-width: 90%;
+        }
+
+        .icon {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            @for $i from 1 to 4 {
+                .icon#{$i} {
+                    position: absolute;
+                    width: 20%;
+                    height: 100%;
+
+                    .iconBtn {
+                        padding: 8px 24px;
+                        position: absolute;
+                        background: #ffffff;
+                        border: 1px solid #424452;
+                        border-radius: 40px;
+                        font-weight: 500;
+                        font-size: 28px;
+                        line-height: 41px;
+                        letter-spacing: 0.04em;
+                        color: #424452;
+                        top: 22%;
+                        left: 50%;
+                        transform: translateX(-50%) !important;
+                        &:hover {
+                            transform: scale(1.1);
+                            cursor: pointer;
+                            background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+                            box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+                            color: #ffffff;
+                            border: none;
+                        }
+                    }
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 20%;
+                    transition: 0.25s;
+                    width: 100%;
+                    &:hover {
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+
+                    &:hover ~ .iconBtn {
+                        background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+                        box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+                        border-radius: 40px;
+                        color: #ffffff;
+                        border: none;
+                    }
+                }
+            }
+
+            .icon1 {
+                position: absolute;
+                top: 55%;
+                left: 18%;
+
+                .iconBtn {
+                }
+            }
+
+            .icon2 {
+                position: absolute;
+                top: 34%;
+                left: 40%;
+
+                .iconBtn {
+                    // left: .5%;
+                    // top: 21%;
+                }
+            }
+
+            .icon3 {
+                position: absolute;
+                top: 61%;
+                left: 62%;
+
+                .iconBtn {
+                    // left: -2%;
+                    top: 18%;
+                }
+            }
+        }
+    }
+}
+
+.bgSmall {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .areaMap {
+        display: none;
+    }
+
+    .bgs {
+        display: block;
+        position: relative;
+
+        .areaGroup {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            .area {
+                // background-color: #000;
+                // width: 30%;
+
+                position: absolute;
+                top: 10%;
+                left: 0;
+                height: 20%;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    height: 70%;
+
+                    &:hover ~ input {
+                        background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+                        box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+                        color: #fff;
+                        border: none;
+                    }
+                }
+
+                input {
+                    background: #ffffff;
+                    border: 1px solid #424452;
+                    border-radius: 40px;
+                    padding: 4px 20px 6px;
+                    border: none;
+                    font-weight: 500;
+                    font-size: 20px;
+                    letter-spacing: 0.04em;
+                    color: #424452;
+                    border: 1px solid #424452;
+
+                    &:hover {
+                        background: linear-gradient(234.31deg, #f59e5b 15.18%, #f5c25b 85.38%);
+                        box-shadow: 0px 4px 16px rgba(245, 158, 91, 0.6);
+                        color: #fff;
+                        border: none;
+                    }
+                }
+            }
+
+            .area1 {
+                position: absolute;
+                top: 40%;
+                left: 10%;
+                gap: 10px;
+
+                input {
+                }
+            }
+
+            .area2 {
+                position: absolute;
+                top: 23%;
+                left: 57%;
+                gap: 10px;
+            }
+
+            .area3 {
+                position: absolute;
+                top: 70%;
+                left: 58%;
+
+                input {
+                    margin-top: -10px;
+                    margin-left: -5%;
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    //     .areaMap {
+    //         display: none;
+    //     }
+
+    //     .bgSmall {
+    //         display: block;
+    //         position: relative;
+
+    //         img {
+    //             width: 100%;
+    //         }
+
+    //         .menuBtn {
+    //             width: 10%;
+    //             height: 3%;
+    //             position: absolute;
+    //             z-index: 999;
+    //             left: 4.5%;
+    //             top: 1%;
+    //             cursor: pointer;
+    //         }
+
+    //         .indexBtn {
+    //             width: 35%;
+    //             height: 3%;
+    //             position: absolute;
+    //             z-index: 999;
+    //             left: 16%;
+    //             top: 1%;
+    //             cursor: pointer;
+    //         }
+
+    //         .topic1Btn {
+    //             width: 35%;
+    //             height: 23%;
+    //             position: absolute;
+    //             z-index: 999;
+    //             right: 10%;
+    //             top: 17%;
+    //             cursor: pointer;
+    //         }
+
+    //         .topic2Btn {
+    //             width: 35%;
+    //             height: 23%;
+    //             position: absolute;
+    //             z-index: 999;
+    //             left: 10%;
+    //             top: 37%;
+    //             cursor: pointer;
+
+    //         }
+
+    //         .topic3Btn {
+    //             width: 35%;
+    //             height: 20%;
+    //             position: absolute;
+    //             z-index: 999;
+    //             right: 12%;
+    //             top: 68%;
+    //             cursor: pointer;
+
+    //         }
+    //     }
+    // }
+
+    // .menu {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 99999;
+    //     width: 100%;
+    // }
+}

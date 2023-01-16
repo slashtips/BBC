@@ -1,0 +1,731 @@
+body,
+html {
+  width: 100%;
+  height: auto;
+  background: radial-gradient(1000% 120% at 50% 80%, white, #9dc8d3);
+  background-repeat: no-repeat;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrap .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .top .left img {
+  margin-top: 50%;
+  cursor: pointer;
+}
+.wrap .title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.wrap .title h1 {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.04em;
+  color: #424452;
+}
+.wrap .title .titleRight {
+  display: flex;
+  gap: 1rem;
+}
+.wrap .title .titleRight .RWDIcon {
+  display: none;
+}
+.wrap .title .titleRight .timeOrder {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+.wrap .title .titleRight .timeOrder .select {
+  width: 242px;
+  color: #424452;
+  cursor: pointer;
+  position: relative;
+  margin-top: 12px;
+}
+.wrap .title .titleRight .timeOrder .select .box {
+  background: #f0ebe3;
+  border-radius: 40px;
+  border-radius: 40px;
+  background: #f0ebe3;
+  padding: 1rem 0 1rem 24px;
+  position: relative;
+}
+.wrap .title .titleRight .timeOrder .select .box img {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.wrap .title .titleRight .timeOrder .select ul {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+  border-radius: 16px;
+  padding: 30px 0 8px 24px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+.wrap .title .titleRight .timeOrder .select ul li {
+  padding-bottom: 1rem;
+}
+.wrap .title .titleRight .timeOrder .select ul li:hover {
+  font-weight: 600;
+}
+.wrap .title .titleRight .activeStatus {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.wrap .title .titleRight .activeStatus .select {
+  width: 242px;
+  position: relative;
+  margin-top: 12px;
+}
+.wrap .title .titleRight .activeStatus .select .box {
+  background: #f0ebe3;
+  border-radius: 40px;
+  border-radius: 40px;
+  background: #f0ebe3;
+  padding: 1rem 0 1rem 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.wrap .title .titleRight .activeStatus .select .box img {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.wrap .title .titleRight .activeStatus .select .box .number {
+  background: #424452;
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 2px 8px;
+  margin-left: 12px;
+}
+.wrap .title .titleRight .activeStatus .select ul {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+  border-radius: 16px;
+  padding: 30px 0 8px 24px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+.wrap .title .titleRight .activeStatus .select ul li {
+  padding-bottom: 1rem;
+}
+.wrap .title .titleRight .activeStatus .select ul li input[type=checkbox] {
+  background: #424452;
+  width: 18px;
+}
+.wrap .title .titleRight .activeStatus .select ul li:hover {
+  font-weight: 600;
+}
+.wrap .dataTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.wrap .dataTitle input {
+  background: #f0ebe3;
+  border-radius: 40px;
+  letter-spacing: 0.01em;
+  color: #424452;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  padding: 6px 16px;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+.wrap .dataTitle .c2 {
+  color: #ffffff;
+  background: #424452;
+}
+.wrap .dataTitle h5 {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: right;
+  letter-spacing: 0.15em;
+  color: #898b91;
+}
+.wrap .cardGroup {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1.5%;
+}
+.wrap .cardGroup .row {
+  width: 30%;
+  margin-top: 32px;
+  margin-bottom: 3.5rem;
+}
+.wrap .cardGroup .row .card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  height: 450px;
+  overflow: hidden;
+}
+.wrap .cardGroup .row .card .errorImg {
+  height: 240px;
+  width: 100%;
+}
+.wrap .cardGroup .row .card .textWrap {
+  padding: 1rem;
+}
+.wrap .cardGroup .row .card .textWrap .cardTitle {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .cardGroup .row .card .textWrap .cardTitle .tag {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: #3975d4;
+  background: #deefff;
+  border-radius: 8px;
+  padding: 3px 12px;
+}
+.wrap .cardGroup .row .card .textWrap .cardTitle .tagComing {
+  color: #f3cc57;
+  background: #fffcf1;
+}
+.wrap .cardGroup .row .card .textWrap .cardTitle small {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #898b91;
+}
+.wrap .cardGroup .row .card .textWrap h5 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 12px;
+  letter-spacing: 0.01em;
+  color: #898b91;
+}
+.wrap .cardGroup .row .card .textWrap h3 {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #424452;
+}
+.wrap .cardGroup .row .card .textWrap .content {
+  padding-top: 0.5rem;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: #898b91;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap .cardGroup .row .card .textWrap p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  padding-top: 12px;
+  letter-spacing: 0.01em;
+  color: #898b91;
+}
+.wrap .cardGroup .row .card .textWrap small {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  color: #898b91;
+  text-align: right;
+  margin-left: auto;
+}
+.wrap .cardGroup .row .card:hover {
+  cursor: pointer;
+}
+
+.titleRWD {
+  display: none;
+}
+
+.meetingSmallCard {
+  display: none;
+}
+
+.wrap .top .right .inputTextGroup {
+  margin: 0;
+  position: relative;
+}
+.wrap .top .right .inputTextGroup input {
+  margin: 0;
+  width: 100%;
+  background: #f0ebe3;
+  border-radius: 40px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #898b91;
+  padding: 1rem 0 1rem 4rem;
+}
+.wrap .top .right .inputTextGroup img {
+  position: absolute;
+  left: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.wrap .top .right .inputTextGroup .searchBox {
+  position: absolute;
+  top: 110%;
+  box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 5%;
+  z-index: 9999;
+  max-height: 500px;
+  overflow-y: scroll;
+  display: none;
+  width: 100%;
+}
+.wrap .top .right .inputTextGroup .searchBox ul h3 {
+  font-size: 1.5rem;
+  color: #424452;
+  font-weight: 600;
+}
+.wrap .top .right .inputTextGroup .searchBox ul li {
+  margin-top: 0.75rem;
+  background-color: #efefef;
+  box-shadow: 0 0 5px rgba(221, 221, 221, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+.wrap .top .right .inputTextGroup .searchBox ul li:hover {
+  color: #f26681;
+  background-color: #ddd;
+  box-shadow: 0 0 5px rgba(221, 221, 221, 0.5);
+}
+.wrap .top .right .inputTextGroup .searchBox ul li a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  color: #424452;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+.wrap .top .right .inputTextGroup .searchBox ul li a .title {
+  font-size: 1rem;
+}
+.wrap .top .right .inputTextGroup .searchBox ul li a p {
+  margin: 0;
+  padding: 0;
+}
+.wrap .top .right .inputTextGroup .searchBox ul li a:hover {
+  color: #f26681;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 568px) {
+  .meetingSmallCard {
+    background: #ffffff;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    width: 86%;
+    margin: 0 auto;
+    padding: 32px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+  .meetingSmallCard .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .meetingSmallCard .title h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.04em;
+    color: #424452;
+  }
+  .meetingSmallCard .search {
+    position: relative;
+    margin-top: 26px;
+  }
+  .meetingSmallCard .search input {
+    background: #f0ebe3;
+    border-radius: 40px;
+    border: none;
+    width: 100%;
+    padding: 1rem 0 1rem 24px;
+  }
+  .meetingSmallCard .search img {
+    position: absolute;
+    top: 22.5%;
+    right: 5%;
+  }
+  .meetingSmallCard .search ul {
+    background: #ffffff;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 1.25rem 0 0 26px;
+    position: absolute;
+    width: 100%;
+    display: none;
+  }
+  .meetingSmallCard .search ul li {
+    padding-bottom: 1rem;
+  }
+  .meetingSmallCard .search ul li a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: #424452;
+  }
+  .meetingSmallCard .timeOrder {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .meetingSmallCard .timeOrder .select {
+    width: 100%;
+    color: #424452;
+    margin-top: 12px;
+    position: relative;
+  }
+  .meetingSmallCard .timeOrder .select .box {
+    background: #f0ebe3;
+    border-radius: 40px;
+    border-radius: 40px;
+    background: #f0ebe3;
+    padding: 1rem 0 1rem 24px;
+    position: relative;
+    margin-top: 0.5rem;
+  }
+  .meetingSmallCard .timeOrder .select .box img {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .meetingSmallCard .timeOrder .select ul {
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+    border-radius: 16px;
+    padding: 30px 0 8px 24px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 9;
+  }
+  .meetingSmallCard .timeOrder .select ul li {
+    padding-bottom: 1rem;
+  }
+  .meetingSmallCard .timeOrder .select ul li:hover {
+    font-weight: 600;
+  }
+  .meetingSmallCard .inputTextGroup {
+    position: relative;
+    margin: 0;
+    height: auto;
+  }
+  .meetingSmallCard .inputTextGroup input {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    width: 100%;
+    border: none;
+  }
+  .meetingSmallCard .inputTextGroup img {
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .meetingSmallCard .inputTextGroup .searchBox {
+    z-index: 10000;
+    width: 100%;
+    position: absolute;
+    text-align: left;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox h3 {
+    text-align: center;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox .article .articleUl {
+    padding: 0;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox .QA .QAUl {
+    padding: 0;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul {
+    text-align: left;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul h3 {
+    font-size: 1.25rem;
+    color: #424452;
+    font-weight: 600;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul li {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul li a {
+    text-decoration: none;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    color: #424452;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin-left: 5%;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul li a .title {
+    font-size: 1rem;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul li a p {
+    margin: 0;
+    padding: 0;
+  }
+  .meetingSmallCard .inputTextGroup .searchBox ul li a:hover {
+    color: #f26681;
+    font-weight: 500;
+  }
+  .meetingSmallCard .activeStatus {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .meetingSmallCard .activeStatus .select {
+    width: 100%;
+    margin-top: 12px;
+    position: relative;
+  }
+  .meetingSmallCard .activeStatus .select .box {
+    background: #f0ebe3;
+    border-radius: 40px;
+    border-radius: 40px;
+    background: #f0ebe3;
+    padding: 1rem 0 1rem 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  .meetingSmallCard .activeStatus .select .box .number {
+    background: #424452;
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 2px 8px;
+    margin-left: 12px;
+  }
+  .meetingSmallCard .activeStatus .select .box img {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .meetingSmallCard .activeStatus .select ul {
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+    border-radius: 16px;
+    padding: 30px 0 8px 24px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 9;
+  }
+  .meetingSmallCard .activeStatus .select ul li {
+    padding-bottom: 1rem;
+  }
+  .meetingSmallCard .activeStatus .select ul li input[type=checkbox] {
+    background: #424452;
+    width: 18px;
+  }
+  .meetingSmallCard .activeStatus .select ul li:hover {
+    font-weight: 600;
+  }
+  .menu {
+    display: none;
+  }
+  .titleRWD {
+    display: block;
+    position: relative;
+  }
+  .titleRWD img {
+    position: absolute;
+    top: 30%;
+    left: 7%;
+  }
+  .titleRWD h5 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    padding: 1rem 0;
+  }
+  .wrap {
+    max-width: 400px;
+  }
+  .wrap .top .left {
+    display: none;
+  }
+  .wrap .top .left input {
+    display: none;
+  }
+  .wrap .top .right {
+    width: 100%;
+    text-align: center;
+  }
+  .wrap .top .right input {
+    margin: 0;
+    width: 85%;
+  }
+  .wrap .title {
+    align-items: center;
+  }
+  .wrap .title h1 {
+    font-weight: 600;
+    font-size: 40px;
+  }
+  .wrap .title .right {
+    display: none;
+  }
+  .wrap .title .titleRight .timeOrder {
+    display: none;
+  }
+  .wrap .title .titleRight .activeStatus {
+    display: none;
+  }
+  .wrap .title .titleRight .RWDIcon {
+    display: block;
+  }
+  .wrap .dataTitle {
+    margin: 0;
+  }
+  .wrap .dataTitle .c2 {
+    color: #ffffff;
+    background: #424452;
+    margin-right: 8px;
+  }
+  .wrap .dataTitle h5 {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: right;
+    letter-spacing: 0.15em;
+    color: #898b91;
+  }
+  .wrap .cardGroup .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .wrap .cardGroup .row .card {
+    max-width: 324px !important;
+    margin: 0 auto;
+  }
+  .wrap .cardGroup .row .col {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  .wrap .cardGroup .row .col .textWrap {
+    padding: 1rem;
+  }
+  .wrap .cardGroup .row .col .textWrap .cardTitle {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrap .cardGroup .row .col .textWrap .cardTitle .tag {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #3975d4;
+    background: #deefff;
+    border-radius: 8px;
+    padding: 3px 12px;
+  }
+  .wrap .cardGroup .row .col .textWrap .cardTitle .tagComing {
+    color: #f3cc57;
+    background: #fffcf1;
+  }
+  .wrap .cardGroup .row .col .textWrap .cardTitle small {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #898b91;
+  }
+  .wrap .cardGroup .row .col .textWrap h3 {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #424452;
+  }
+  .wrap .cardGroup .row .col .textWrap h5 {
+    padding-top: 0.5rem;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #898b91;
+  }
+  .wrap .cardGroup .row .col .textWrap p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    padding-top: 12px;
+    letter-spacing: 0.01em;
+    color: #898b91;
+  }
+  .wrap .cardGroup .row .col .textWrap small {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: right;
+    letter-spacing: 0.01em;
+    color: #898b91;
+    text-align: right;
+    margin-left: auto;
+  }
+}/*# sourceMappingURL=news.css.map */

@@ -1,0 +1,396 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  max-width: 1200px;
+}
+
+.top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top .option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  display: block;
+  width: 100%;
+}
+
+.option input {
+  background: #f0ebe3;
+  border-radius: 40px;
+}
+
+.inputTextGroup {
+  position: relative;
+}
+
+.inputTextGroup input {
+  width: 368px;
+  height: 54px;
+  background: #f0ebe3;
+  border-radius: 40px;
+  padding-left: 15%;
+  border: none;
+  font-size: 20px;
+}
+
+.inputTextGroup img {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.topicSecGroup {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.topicSecGroup {
+  gap: 10px;
+  justify-content: space-between;
+}
+.topicSecGroup a {
+  text-decoration: none;
+  color: #424452;
+}
+.topicSecGroup .topicSec {
+  width: 100%;
+}
+.topicSecGroup .card {
+  text-align: center;
+  width: 100%;
+  height: 158px;
+  padding: 12.5%;
+  background: #ffffff;
+  border: 1px solid #dfdfdf;
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+  transition: 0.15s;
+  position: relative;
+}
+.topicSecGroup .card img {
+  text-align: center;
+}
+.topicSecGroup .card h5 {
+  margin-top: 20px;
+  white-space: nowrap;
+  font-weight: 580;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.topicSecGroup .card:hover {
+  background: #424452;
+  color: #fff;
+}
+
+.topicSecActive {
+  background: #424452 !important;
+  color: #fff !important;
+}
+
+.articleGroup {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  overflow: hidden;
+}
+.articleGroup .titleH1 {
+  width: 100%;
+  font-weight: 500;
+  font-size: 80px;
+  letter-spacing: 0.04em;
+  color: #424452;
+  padding-bottom: 60px;
+}
+.articleGroup .group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.articleGroup .article {
+  width: 30%;
+  cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
+}
+.articleGroup .article .errorImg {
+  height: 240px;
+}
+.articleGroup .airticleText {
+  padding: 1rem;
+}
+.articleGroup .airticleText .tag {
+  background: #ffffff;
+  border: 0.5px solid #424452;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  color: #333541;
+  padding: 3px 12px;
+  width: 114px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  margin-top: 1.5rem;
+}
+.articleGroup .airticleText .title {
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+  color: #424452;
+  margin-top: 1rem;
+}
+.articleGroup .airticleText .content {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.01em;
+  color: #898b91;
+  padding-top: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  /*行數*/
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.RWDTop {
+  display: none;
+}
+
+.searchBox {
+  position: absolute;
+  top: 110%;
+  box-shadow: 0px 2px 4px rgba(29, 31, 40, 0.04), 0px 8px 16px rgba(66, 68, 82, 0.16);
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 5%;
+  z-index: 9999;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: scroll;
+  display: none;
+}
+.searchBox ul h3 {
+  font-size: 1.5rem;
+  color: #424452;
+  font-weight: 600;
+}
+.searchBox ul li {
+  margin-top: 0.75rem;
+  background-color: #efefef;
+  box-shadow: 0 0 5px rgba(221, 221, 221, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.searchBox ul li:hover {
+  color: #f26681;
+  background-color: #ddd;
+  box-shadow: 0 0 5px rgba(221, 221, 221, 0.5);
+}
+.searchBox ul li a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  color: #424452;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+.searchBox ul li a:hover {
+  color: #f26681;
+}
+
+@media screen and (max-width: 1200px) {
+  .top {
+    max-width: 90%;
+  }
+  .articleGroup {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .articleGroup .titleH1 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+  }
+  .articleGroup .group .article {
+    overflow: hidden;
+    width: 27%;
+  }
+  .topicSecGroup {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .menu {
+    display: none;
+  }
+  .top .option .backS {
+    display: none;
+  }
+  .top .option .backM {
+    display: none;
+  }
+  .RWDTop {
+    max-width: 327px;
+    margin: 0 auto;
+    display: block;
+    padding-top: 20px;
+    position: relative;
+  }
+  .RWDTop h3 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 72.5%;
+    transform: translate(-50%, -50%);
+  }
+  .top {
+    margin-top: 20px;
+  }
+  .top .inputTextGroup {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .top .option input {
+    max-width: 327px;
+    height: 54px;
+    background: #f0ebe3;
+    border-radius: 40px;
+    margin: 0 auto;
+  }
+  .topicSecGroup {
+    max-width: 327px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+    padding-top: 60px;
+  }
+  .topicSecGroup .topicSec {
+    width: 45%;
+  }
+  .topicSecGroup .topicSec .card {
+    display: flex;
+    align-items: center;
+    height: 0;
+    max-width: 154px;
+    min-height: 54px;
+  }
+  .topicSecGroup .topicSec .card h5 {
+    position: static;
+    transform: translate(0);
+    margin: 0;
+    margin-left: 12px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+  .topicSecGroup .topicSec .card img {
+    width: 23%;
+  }
+  .topicSecGroup .RWDFull {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+  .topicSecGroup .RWDFull .card {
+    padding: 0;
+    bottom: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0;
+    height: 0;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .topicSecGroup .RWDFull .card img {
+    width: 10%;
+  }
+  .articleGroup {
+    max-width: 327px;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 60px;
+  }
+  .articleGroup .titleH1 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+  }
+  .articleGroup .group {
+    flex-wrap: wrap;
+  }
+  .articleGroup .group .article {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .searchBox {
+    z-index: 10000;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+  }
+  .searchBox ul li {
+    margin-top: 0.75rem;
+  }
+  .searchBox ul li a {
+    text-decoration: none;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    color: #424452;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-height: 1.25;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+  .searchBox ul li a .title {
+    font-size: 1rem;
+  }
+  .searchBox ul li a p {
+    margin: 0;
+    padding: 0;
+  }
+  .searchBox ul li a:hover {
+    color: #f26681;
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=recommendArticle.css.map */
