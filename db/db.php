@@ -1,13 +1,6 @@
 <?PHP
 ob_start();
 
-// $db_server = "localhost";
-// $db_name = "zfcloudadmin_kaiBBC";
-// $db_user = "zfcloudadmin_root";
-// $db_passwd = "m4h5KHgKFUx4";
-
-
-
 $dbms = 'mysql';
 $host = 'bbc-db-1.cftxt2nbwtqk.ap-northeast-1.rds.amazonaws.com';
 $dbName = 'zfcloudadmin_kaiBBC';
