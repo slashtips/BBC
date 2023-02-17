@@ -1,5 +1,5 @@
 <?php
-include  '../db/db.php';
+include '../db/db.php';
 
 extract($_FILES['imgPath']);
 
@@ -28,7 +28,7 @@ switch ($error) {
     case 1:
         echo '上傳檔案過大(伺服器限制)';
         break;
-        // 不會顯示出來 會直接報錯
+    // 不會顯示出來 會直接報錯
     case 2:
         echo '上傳檔案過大(表單限制)';
         break;
@@ -80,7 +80,7 @@ if ($_FILES['picture']) {
         case 1:
             echo '上傳檔案過大(伺服器限制)';
             break;
-            // 不會顯示出來 會直接報錯
+        // 不會顯示出來 會直接報錯
         case 2:
             echo '上傳檔案過大(表單限制)';
             break;
@@ -119,10 +119,22 @@ $status = 1;
 $publish = 1;
 
 date_default_timezone_set('Asia/Taipei'); //時區
-$sql = "INSERT INTO `meeting` ( `title`,`topicSec`, `source`, `content`, `status`, `publish`, `tag`, `imgPath`, `picture`, `video`, `form`, `date`,`location`, `createTime`, `updateTime`) VALUES ( '$title','會議活動', '$source', '$content', '1', '1', '$tag', '$path', '$path2', '$video', '$form', '$date', '$location', '$date0', '$date0');";
-$res = $db->query($sql);
-$res->setFetchMode(PDO::FETCH_ASSOC);
+$sql = "INSERT INTO `meeting` ( `title`,`topicSec`, `source`, `content`, `status`, `publish`, `tag`, `imgPath`, `picture`, `video`, `form`, `date`,`location`, `createTime`, `updateTime`) VALUES ( :title,'會議活動', :source, :content, '1', '1', :tag, :path, :path2, :video, :form, '$date', :location, '$date0', '$date0');";
+
+$stmt = $db->prepare($sql);
+
+$stmt->bindValue(':title', $title);
+$stmt->bindValue(':source', $source);
+$stmt->bindValue(':content', $content);
+$stmt->bindValue(':tag', $tag);
+$stmt->bindValue(':path', $path);
+$stmt->bindValue(':path2', $path2);
+$stmt->bindValue(':video', $video);
+$stmt->bindValue(':form', $form);
+$stmt->bindValue(':location', $location);
+$stmt->execute();
+$query = $stmt->fetchAll();
 
 
-echo "<script> alert('文章新增成功，請等候批准');window.location.href='../back_meeting.html'; </script>";
+echo "<script> alert('會議新增成功');window.location.href='../back_meeting.html'; </script>";
 exit;

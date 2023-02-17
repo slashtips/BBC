@@ -84,6 +84,9 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
         .content .hr {
             max-width: 741px;
         }
+        .catelog{
+            display: flex !important;
+        }
 
         .article .topic .text h1 {
             font-family: 'Roboto';
@@ -163,6 +166,7 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
         }
 
 
+        
 
         .relatedArticles .card .cardText {
             padding: 1rem;
@@ -290,6 +294,7 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
                 display: block;
             }
         }
+        
     </style>
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -370,9 +375,6 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
                     </h6>
                     <h1 class="inArticleH1"><?php echo $title ?></h1>
                 </div>
-
-
-
             </div>
 
             <div class="content">
@@ -404,10 +406,7 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
         </div>
 
 
-
-    </div>
-
-    <div class="catelog">
+        <div class="catelog">
 
         <div class="articlesCatelog2">
             <h2>最新消息</h2>
@@ -439,6 +438,11 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
         </div>
 
     </div>
+    
+
+    </div>
+
+    
 
 
 

@@ -1,6 +1,8 @@
 <?php
 include '../db/db.php';
 $sql = "SELECT * FROM `SMTP` WHERE id = '1' ";
+
+
 $res = $db->query($sql);
 $res->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -27,10 +29,30 @@ foreach ($res as $row) {
 $email = $_POST["email"];
 
 
-$sqlU = "SELECT * FROM `users` WHERE `users`.`email` = '$email'";
-$resU = $db->query($sqlU);
-$resU->setFetchMode(PDO::FETCH_ASSOC);
-foreach ($resU as $user) {
+
+$sqlU = "SELECT * FROM `users` WHERE `users`.`email` = :email";
+
+$stmt = $db->prepare($sqlU);
+$stmt->bindValue(':email', "$email");
+$stmt->execute();
+$query = $stmt->fetchAll();
+
+
+foreach($query as $aa)
+{
+    if($aa['id']=="")
+    {
+        echo 0;
+        exit();
+    }
+}
+
+
+
+$firstName;
+$lastName;
+
+foreach ($query as $user) {
     $firstName = $user["firstName"];
     $lastName = $user["lastName"];
 }

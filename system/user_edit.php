@@ -6,22 +6,26 @@ $sql = "SELECT * FROM `users`";
 $res = $db->query($sql);
 $res->setFetchMode(PDO::FETCH_ASSOC);
 
+$id = $_POST['i'];
+
+$sql2 = "SELECT * FROM `users` where `id` = :id";
+
+$stmt = $db->prepare($sql2);
+$stmt->bindValue(':id', $id);
+$stmt->execute();
+$query = $stmt->fetchAll();
+
 $firstName = "";
 $lastName = "";
 $email = "";
 $title = "";
 
-foreach ($res as $row) {
+foreach ($query as $row) {
     $firstName = $row['firstName'];
     $lastName = $row['lastName'];
     $email = $row['email'];
     $title = $row['title'];
 }
-
-$sql2 = "SELECT * FROM `users` where `id` = '$_POST[i]'";
-$res2 = $db->query($sql2);
-$res2->setFetchMode(PDO::FETCH_ASSOC);
-
 
 // $row = mysqli_fetch_array($res2);
 ?>
@@ -44,7 +48,9 @@ $res2->setFetchMode(PDO::FETCH_ASSOC);
 
 <body>
     <div class="wrap container">
-        <h3>修改會員編號<?php echo $_POST["i"]; ?>的資料</h3>
+        <h3>修改會員編號
+            <?php echo $id; ?>的資料
+        </h3>
         <form action="user_edit_modify.php" method="POST">
             <div class="mb-3">
                 <label for="firstName" class="form-label">姓氏 : </label>
@@ -91,7 +97,7 @@ $res2->setFetchMode(PDO::FETCH_ASSOC);
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 刪除
             </button>
-            <input type='hidden' name='i' value='<?php echo $_POST["i"]; ?>'>
+            <input type='hidden' name='i' value='<?php echo $id; ?>'>
         </form>
     </div>
 </body>
@@ -111,7 +117,7 @@ $res2->setFetchMode(PDO::FETCH_ASSOC);
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                 <form action='user_edit_delete.php' method='post'><input type='submit' class='btn btn-danger me-2'
-                        value='確定'> <input type='hidden' name='i' value='<?php echo $_POST["i"]; ?>'></form>
+                        value='確定'> <input type='hidden' name='i' value='<?php echo $id; ?>'></form>
             </div>
         </div>
     </div>

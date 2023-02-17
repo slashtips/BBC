@@ -142,12 +142,13 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
                                 echo "<td>" . $user['id'] . "</td>";
                                 echo "<td>" . $user['firstName'] . $user['lastName'] . "</td>";
                                 echo "<td>" . $user['email'] . "</td>";
-                                echo "<td>" . "<form action='system/Permission_edit.php' method='post'><input type='hidden' name='id' value='$user[id]'  ><input type='submit' class='btn btn-outline-success me-2' value='權限調整' >";
+                                echo "<td>" . "<form action='system/Permission_edit.php' method='post'><input type='hidden' name='id' value='$user[id]'  ><input type='submit' class='btn btn-outline-success me-2' value='權限調整' ></form>";
                                 echo "</tr>";
 
 
                             }
                             ?>
+                         
                         </tbody>
 
                     </table>
@@ -173,7 +174,7 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
                                 echo "<td>" . $user['id'] . "</td>";
                                 echo "<td>" . $user['firstName'] . $user['lastName'] . "</td>";
                                 echo "<td>" . $user['email'] . "</td>";
-                                echo "<td>" . "<form action='system/Permission_edit.php' method='post'><input type='hidden' name='id' value='$user[id]'  ><input type='submit' class='btn btn-outline-success me-2' value='權限調整' >";
+                                echo "<td>" . "<form action='system/Permission_edit.php' method='post'><input type='hidden' name='id' value='$user[id]'  ><input type='submit' class='btn btn-outline-success me-2' value='權限調整' ></form>";
                                 echo "</tr>";
                             }
                             ?>
@@ -204,7 +205,7 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
                                 echo "<td>" . $user['id'] . "</td>";
                                 echo "<td>" . $user['firstName'] . $user['lastName'] . "</td>";
                                 echo "<td>" . $user['email'] . "</td>";
-                                echo "<td>" . "<form action='system/Permission_edit.php' method='post'><input type='hidden' name='id' value='$user[id]'  ><input type='submit' class='btn btn-outline-success me-2' value='權限調整' >";
+                                echo "<td>" . "<form action='system/Permission_edit.php' method='post'><input type='hidden' name='id' value='$user[id]'  ><input type='submit' class='btn btn-outline-success me-2' value='權限調整' ></form>";
                                 echo "</tr>";
                             }
                             ?>

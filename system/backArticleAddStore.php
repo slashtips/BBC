@@ -123,9 +123,19 @@ $status = 1;
 $publish = 1;
 
 date_default_timezone_set('Asia/Taipei'); //時區
-$sql = "INSERT INTO `article` ( `topicSec`,`title`, `content`, `source`,`articlePath`,`video`,`picture`,`status`,`publish`, `createTime`, `updateTime`) VALUES (  '$topicSec', '$title', '$content', '$source','$path','$video','$path2','$status','$publish', '$date', '$date');";
-$res = $db->query($sql);
-$res->setFetchMode(PDO::FETCH_ASSOC);
+$sql = "INSERT INTO `article` ( `topicSec`,`title`, `content`, `source`,`articlePath`,`video`,`picture`,`status`,`publish`, `createTime`, `updateTime`) VALUES (  :topicSec, :title, :content, :source,:path,:video,:path2,'$status','$publish', '$date', '$date');";
+
+$stmt = $db->prepare($sql);
+
+$stmt->bindValue(':topicSec', $topicSec);
+$stmt->bindValue(':title', $title);
+$stmt->bindValue(':content', $content);
+$stmt->bindValue(':source', $source);
+$stmt->bindValue(':path', $path);
+$stmt->bindValue(':video', $video);
+$stmt->bindValue(':path2', $path2);
+$stmt->execute();
+$query = $stmt->fetchAll();
 
 
 

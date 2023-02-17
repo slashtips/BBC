@@ -1,15 +1,15 @@
 <?php
 include '../db/db.php';
 $GACodeID = $_POST["GACodeID"];
-$sql = "UPDATE `GACode` SET `CodeID` = '$GACodeID' WHERE `GACode`.`id` = 1;";
-
-$res = $db->query($sql);
-$res->setFetchMode(PDO::FETCH_ASSOC);
+$sql = "UPDATE `GACode` SET `CodeID` = :GACodeID WHERE `GACode`.`id` = 1;";
 
 
-if ($res) {
-    echo "<script>  window.location.href='../backGA.php'</script>";
-}
-else{
-    echo "<script>alert('d')</script>";
-}
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':GACodeID', $GACodeID);
+
+$stmt->execute();
+$query = $stmt->fetchAll();
+
+
+
+echo "<script>  window.location.href='../backGA.php'</script>";

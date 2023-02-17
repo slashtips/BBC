@@ -1254,10 +1254,17 @@ if (forgetPassword) {
             url: "system/user_forget.php",
             data: form.serialize(),
             success: function (response) {
-                alert("寄送成功，請查收信件")
-                forgetPassword.style = "display:none"
-                cover.style = "display:none"
-                document.querySelector("body").style = "  overflow-y: scroll"
+                // console.log(response);
+                // if (response == 0) {
+                //     alert("查找不到此信箱")
+                // }
+                // else {
+                //     alert("寄送成功，請查收信件")
+                //     forgetPassword.style = "display:none"
+                //     cover.style = "display:none"
+                //     document.querySelector("body").style = "  overflow-y: scroll"
+                // }
+
             },
             error: function (err) {
                 console.log(err);

@@ -3,14 +3,16 @@
 
 include '../db/db.php';
 $email = $_COOKIE["email"];
-echo $email;
-$sql0 = "SELECT * FROM `users` Where `email` = '$email'";
 
-$res0 = $db->query($sql0);
-$res0->setFetchMode(PDO::FETCH_ASSOC);
-$row0 = mysqli_fetch_array($res0);
+$sql0 = "SELECT * FROM `users` Where `email` = :email";
+
+$stmt = $db->prepare($sql0);
+$stmt->bindValue(':email', $email);
+$stmt->execute();
+$query = $stmt->fetchAll();
+
 $photoPath = "";
-foreach ($res0 as $row0) {
+foreach ($query as $row0) {
     $photoPath = "../" . $row0['photoPath'];
 }
 
@@ -20,7 +22,8 @@ unlink($photoPath); //將檔案刪除
 
 
 
-$sql = "UPDATE `users` SET `photoPath` = 'pic/Common/userNone.png' WHERE `users`.`email` = '$email';";
-echo $sql;
-$res = $db->query($sql);
-$res->setFetchMode(PDO::FETCH_ASSOC);
+$sql = "UPDATE `users` SET `photoPath` = 'pic/Common/userNone.png' WHERE `users`.`email` = :email;";
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':email', $email);
+$stmt->execute();
+$query = $stmt->fetchAll();

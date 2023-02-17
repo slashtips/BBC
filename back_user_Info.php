@@ -119,18 +119,19 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
             <tbody>
                 <?php
                 foreach ($res as $user) {
-                    echo "<tr>";
-                    echo "<td>" . $user['firstName'] . "</td>";
-                    echo "<td>" . $user['lastName'] . "</td>";
-                    echo "<td>" . $user['email'] . "</td>";
-
-                    echo "<td>" . $user['date'] . "</td>";
-                    echo "<td>" . $user['title'] . "</td>";
-                    echo "<td>" . $user['status'] . "</td>";
-                    echo "<td>" . " <form action='system/user_edit.php' method='post'><input  type='submit' class='btn btn-outline-success me-2' value='編輯'>  <input type='hidden' name='i' value='$user[id]'> </form>";
-                    echo "</tr>";
+                    echo "<tr> "
+                        . "<td>" . $user['firstName'] . "</td>"
+                        . "<td>" . $user['lastName'] . "</td>"
+                        . "<td>" . $user['email'] . "</td>"
+                        . "<td>" . $user['date'] . "</td>"
+                        . "<td>" . $user['title'] . "</td>"
+                        . "<td>" . $user['status'] . "</td>"
+                        . "<td>" . " <form action='system/user_edit.php' method='post'><input  type='submit' class='btn btn-outline-success me-2' value='編輯'>  <input type='hidden' name='i' value='$user[id]'> </form>"
+                        . "</tr>";
                 }
                 ?>
+
+
             </tbody>
 
 

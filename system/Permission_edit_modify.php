@@ -3,14 +3,14 @@ include '../db/db.php';
 $id = $_POST['i'];
 $title = $_POST['title'];
 
-echo $date;
+
 $sql = "UPDATE `users` SET `title` = '$title' WHERE `users`.`id` = $id;";
 
-$res = $db->query($sql);
-$res->setFetchMode(PDO::FETCH_ASSOC);
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':title', $title);
+$stmt->bindValue(':id', $id);
+$stmt->execute();
+$query = $stmt->fetchAll();
 
-if ($res) {
-    header("Location:../backPermissionInfo.php");
-} else {
-    echo "修改錯誤";
-}
+
+header("Location:../backPermissionInfo.php");

@@ -54,11 +54,17 @@ if ($emailE == 1) {
 
 
 
-$sql = "INSERT INTO `users` ( `firstName`, `lastName`, `email`, `password`, `date`, `status`,`photoPath`,`title`) VALUES ( '$firstName', '$lastName', '$email', '$passwordHash', '$date', '0','$photoPath','$title');";
-$res = $db->query($sql);
-$res->setFetchMode(PDO::FETCH_ASSOC);
+$sql = "INSERT INTO `users` ( `firstName`, `lastName`, `email`, `password`, `date`, `status`,`photoPath`,`title`) VALUES ( :firstName, :lastName, :email, :passwordHash, '$date', '0',:photoPath,:title);";
 
-
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':firstName', $firstName);
+$stmt->bindValue(':lastName', $lastName);
+$stmt->bindValue(':email', $email);
+$stmt->bindValue(':passwordHash', $passwordHash);
+$stmt->bindValue(':photoPath', $photoPath);
+$stmt->bindValue(':title', $title);
+$stmt->execute();
+$query = $stmt->fetchAll();
 
 
 
