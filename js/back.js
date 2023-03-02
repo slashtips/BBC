@@ -28,6 +28,17 @@ function CommonBack() {
     }
 }
 
+function CookieShow() {
+
+    if (getCookieByName('title') == "SystemAdministrator" || getCookieByName('title') == "Administrator") {
+        let cookieHide = document.querySelector(".cookieHide")
+        if(cookieHide)
+        {
+            cookieHide.style = "display:block"
+        }
+    }
+}
+
 function HignBlock() {
     if (getCookieByName('title') == "SystemAdministrator") {
         let highLevel = document.querySelectorAll(".highLevel")

@@ -3,7 +3,7 @@
 include '../db/db.php';
 $email = $_COOKIE["email"];
 $emailStr = $_POST['emailStr'];
-$sql = "SELECT COUNT(EmailAddress) as EmailAddress FROM EmailAddress WHERE EmailAddress = :emailStr;";
+$sql = "SELECT * FROM EmailAddress WHERE EmailAddress = :emailStr;";
 
 $stmt = $db->prepare($sql);
 $stmt->bindValue(':emailStr', "$emailStr");
@@ -18,7 +18,7 @@ foreach ($query as $row) {
     $e = $row['EmailAddress'];
 }
 
-if ($e!="") {
+if ($e != "") {
     echo 1;
 } else {
     echo 0;

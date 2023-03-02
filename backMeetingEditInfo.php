@@ -80,6 +80,9 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
             max-width: 100px;
             max-height: 100px;
         }
+        .cookieHide{
+            display: none;
+        }
     </style>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -90,7 +93,7 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
     <div class="backMenu"></div>
 
 
-    <div class="container">
+    <div class="container cookieHide">
         <div class="PageNumber text-end mt-4">
             <span>每頁分頁量</span> <input min="10" type="number" placeholder="最小為10">
             <input type="button" value="啟動分頁" class="btn btn-outline-success paginationBtn">
@@ -163,6 +166,8 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 
 </html>
 <script src="js/back.js"></script>
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
@@ -324,6 +329,7 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
     }
 
     CommonBack()
+    CookieShow();
 
 
     let btnDeleteCheck = document.querySelectorAll(".btnDeleteCheck");

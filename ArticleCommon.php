@@ -29,7 +29,9 @@ foreach ($res as $row) {
 $sqlR = "SELECT * FROM `article` WHERE `id` <> $id AND `topicSec` = '$topicSec' AND `publish` = 1 ORDER BY id DESC LIMIT 0 , 3 ";
 $resR = $db->query($sqlR);
 $resR->setFetchMode(PDO::FETCH_ASSOC);
+
 // $sqlC = "SELECT * FROM `article` WHERE `id` <> $id AND `topicSec` = '$topicSec' AND `publish` = 1 ORDER BY id DESC LIMIT 0 , 9 ";
+
 $sqlC = "SELECT * FROM `article` WHERE `id` <> $id  AND `publish` = 1 ORDER BY id DESC LIMIT 0 , 5 ";
 $resC = $db->query($sqlC);
 $resC->setFetchMode(PDO::FETCH_ASSOC);

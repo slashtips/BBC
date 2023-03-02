@@ -254,7 +254,8 @@ foreach ($res as $row) {
 	integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
 
 <script src="js/back.js"></script>
-
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
 	//Cookie讀取
 	function parseCookie() {

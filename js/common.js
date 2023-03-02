@@ -17,6 +17,9 @@ function parseCookie() {
 
 
 
+
+
+
 function getCookieByName(name) {
     var value = parseCookie()[name];
     if (value) {
@@ -616,11 +619,11 @@ $(document).ready(function () {
                 let photoPath = response_arr[6];
                 console.log(id, name, email, date, status);
                 if (id) {
-                    document.cookie = `username=${name}; max-age=7200; secure path=/`;
-                    document.cookie = `email=${email}; max-age=7200; secure path=/`;
-                    document.cookie = `loginStatus=${status}; max-age=7200; secure path=/`;
-                    document.cookie = `title=${title}; max-age=7200; secure path=/`;
-                    document.cookie = `photoPath=${photoPath}; max-age=7200; secure path=/`;
+                    document.cookie = `username=${name}; max-age=7200; path=/;`;
+                    document.cookie = `email=${email}; max-age=7200; path=/;`;
+                    document.cookie = `loginStatus=${status}; max-age=7200; path=/;`;
+                    document.cookie = `title=${title}; max-age=7200; path=/;`;
+                    document.cookie = `photoPath=${photoPath}; max-age=7200; path=/;`;
                     window.location.href = "MedicalArea.php";
                 }
                 else {
@@ -1254,16 +1257,16 @@ if (forgetPassword) {
             url: "system/user_forget.php",
             data: form.serialize(),
             success: function (response) {
-                // console.log(response);
-                // if (response == 0) {
-                //     alert("查找不到此信箱")
-                // }
-                // else {
-                //     alert("寄送成功，請查收信件")
-                //     forgetPassword.style = "display:none"
-                //     cover.style = "display:none"
-                //     document.querySelector("body").style = "  overflow-y: scroll"
-                // }
+                console.log(response);
+                if (response == 0) {
+                    alert("查找不到此信箱")
+                }
+                else {
+                    alert("寄送成功，請查收信件")
+                    forgetPassword.style = "display:none"
+                    cover.style = "display:none"
+                    document.querySelector("body").style = "  overflow-y: scroll"
+                }
 
             },
             error: function (err) {
@@ -2389,9 +2392,52 @@ if (getCookieByName('username') && getCookieByName('loginStatus') == 1) {
 //後台選單隱藏
 let backHide = document.querySelector(".backHide");
 if (backHide) {
-    if ((getCookieByName('title') == "SystemAdministrator" || getCookieByName('title') == "Administrator")) {
-        backHide.style = "display:block"
-    }
+    $.ajax({
+        type: "POST",
+        url: "system/userCheckApi2.php",
+        data: {
+            email: getCookieByName('email'),
+            
+        },
+        success: function (response) {
+            console.log(response);
+            if (response == 1) {
+              
+                backHide.style = "display:block"
+            }
+        }
+    });
+
+}
+
+//強制登出
+function ForceLogout() {
+    setInterval(() => {
+
+        $.ajax({
+            type: "POST",
+            url: "system/userCheckApi.php",
+            data: {
+                email: getCookieByName('email'),
+            },
+            success: function (response) {
+                
+                if (response == 1) {
+                    console.log(response);
+                }
+                else {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;secure path=/;";
+                    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure path=/;";
+                    document.cookie = "loginStatus=; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure path=/;";
+                    document.cookie = "title=; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure path=/;";
+                    document.cookie = "photoPath=; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure path=/;";
+                    document.querySelector('.menum').style = "display:none";
+
+                    window.location.reload();
+                }
+            }
+        });
+    }, 15000);
 }
 
 //聯外

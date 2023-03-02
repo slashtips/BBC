@@ -30,21 +30,25 @@ $email = $_POST["email"];
 
 
 
-$sqlU = "SELECT * FROM `users` WHERE `users`.`email` = :email";
+$sqlU = "SELECT * FROM `users` WHERE `users`.`email` = :email ORDER BY id DESC LIMIT 0 , 1";
 
 $stmt = $db->prepare($sqlU);
 $stmt->bindValue(':email', "$email");
 $stmt->execute();
 $query = $stmt->fetchAll();
 
+$temp;
 
-foreach($query as $aa)
-{
-    if($aa['id']=="")
-    {
-        echo 0;
-        exit();
-    }
+foreach ($query as $aa) {
+    $temp = $aa['id'];
+
+}
+
+if (trim($temp) == "") {
+    echo 0;
+    exit();
+} else {
+    echo 1;
 }
 
 
@@ -67,7 +71,7 @@ $r6 = rand(0, 9);
 
 $random = $r1 . $r2 . $r3 . $r4 . $r5 . $r6;
 $randomCode = rtrim(strtr(base64_encode($random), '+/', '-_'), '=');
-
+$emailCode = rtrim(strtr(base64_encode($email), '+/', '-_'), '=');
 $randomDecode = base64_decode(str_pad(strtr($randomCode, '-_', '+/'), strlen($randomCode) % 4, '=', STR_PAD_RIGHT));
 
 
@@ -114,7 +118,7 @@ try {
         <h1>親愛的「 $firstName  $lastName 」您好</h1>
         <p>您的驗證碼為<span>$random</span></p>
         
-        <h3>請點擊<a href='$local/system/user_forgetVertify.php?email=$email&code=$randomCode'>連結</a>驗證：）<br>
+        <h3>請點擊<a href='$local/system/user_forgetVertify.php?email=$emailCode&code=$randomCode'>連結</a>驗證：）<br>
     </h3>
     " . "<br>" . $date . "本信由系統發送";
     $mail->Body = "$body";

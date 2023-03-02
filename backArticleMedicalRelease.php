@@ -94,6 +94,8 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
 
 <script src="js/back.js"></script>
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <body>
     <div class="backMenu"></div>
 

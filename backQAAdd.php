@@ -21,11 +21,16 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style>
+		.cookieHide{
+            display: none;
+        }
+	</style>
 </head>
 
 <body>
 	<div class="backMenu"></div>
-	<div class="container text-center">
+	<div class="container text-center cookieHide">
 		<h1>新增QA</h1>
 		<form action="system/backAddQAStore.php" method="post">
 
@@ -163,7 +168,8 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 
 </html>
 <script src="js/back.js"></script>
-
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
 	//Cookie讀取
 	function parseCookie() {
@@ -193,4 +199,5 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 	}
 
 	CommonBack()
+	CookieShow();
 </script>

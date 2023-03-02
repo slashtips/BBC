@@ -56,6 +56,7 @@ $resGA->setFetchMode(PDO::FETCH_ASSOC);
 
 <script src="include/jquery-ui-1.13.2/jquery-ui.min.js"></script>
 <script src="include/jquery-ui-touch-punch-master/jquery.ui.touch-punch.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?php
 foreach ($resGA as $GA) {
     echo $GA['CodeID'];
@@ -286,6 +287,7 @@ foreach ($resGA as $GA) {
 <script src="js/common.js"></script>
 <script src="js/article.js"></script>
 <script>
+  
     let title = document.querySelector(".topic h3");
     let titleSec = document.querySelector(".topic h1")
     let cateloggTitle = document.querySelectorAll(".catelogg .title");

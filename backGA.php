@@ -26,11 +26,16 @@ foreach($res as $row)
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style>
+		.cookieHide{
+            display: none;
+        }
+	</style>
 </head>
 
 <body>
 	<div class="backMenu"></div>
-	<div class="container text-center">
+	<div class="container text-center cookieHide">
 		<h1>GACode ID</h1>
 		<form action="system/backGACode.php" method="post">
 			<div class="mb-3">
@@ -51,7 +56,8 @@ foreach($res as $row)
 
 </html>
 <script src="js/back.js"></script>
-
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
 	//Cookie讀取
 	function parseCookie() {
@@ -81,4 +87,5 @@ foreach($res as $row)
 	}
 
 	CommonBack()
+	CookieShow();
 </script>

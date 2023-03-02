@@ -277,7 +277,7 @@
 
         }, false)
     }
-  
+
     if (!getCookieByName('username')) {
         window.location.href = "index.php";
     }
@@ -361,4 +361,5 @@
         lineImgSmall.src = "pic/Common/QRcode2.png";
         lineImgSmall.parentNode.href = "https://docs.google.com/forms/d/e/1FAIpQLSewiuwti3Lxfy0gBdoQBB3gF4TKXQPoxTfjFJ8DcEybJgKIHQ/viewform"
     }
+    ForceLogout()
 </script>

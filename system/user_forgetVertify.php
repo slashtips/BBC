@@ -1,9 +1,9 @@
 <?php
-include  '../db/db.php';
-$email = $_GET['email'];
+include '../db/db.php';
+$emailCode = $_GET['email'];
 $code = $_GET['code'];
 $decode = base64_decode(str_pad(strtr($code, '-_', '+/'), strlen($code) % 4, '=', STR_PAD_RIGHT));
-
+$email = base64_decode(str_pad(strtr($emailCode, '-_', '+/'), strlen($emailCode) % 4, '=', STR_PAD_RIGHT));
 $pass = 0;
 
 ?>
@@ -19,7 +19,8 @@ $pass = 0;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet" href="../css/common.css">
@@ -138,8 +139,8 @@ $pass = 0;
 
 
 <body>
-    <div class="hideCode" data-code=<?php echo  $decode; ?>></div>
-    <div class="hideEmail" data-email=<?php echo $email; ?>></div>
+
+
     <div class="cover"></div>
 
     <div class="fakeBG">
@@ -187,7 +188,7 @@ $pass = 0;
         <div class="textContent">
             <div class="title">
                 <h3>設置新密碼</h3>
-  
+
             </div>
             <p>請輸入新密碼，作為未來登入使用。</p>
             <div class="password">
@@ -243,7 +244,7 @@ $pass = 0;
         <div class="textContent">
             <div class="title">
                 <h3>密碼設置完成</h3>
-            
+
             </div>
             <p>密碼已重設成功！請用新密碼重新登入。</p>
             <div class="inputGroup">
@@ -255,7 +256,7 @@ $pass = 0;
     <div class="commonCardSmall setNewPasswordCompletedSmall">
         <div class="commonTitleSmall">
             <h3>密碼設置完成</h3>
-          
+
         </div>
         <div class="bigIcon">
             <img src="../pic/Common/CommonCard/bigIcon4.png" alt="">
@@ -264,7 +265,7 @@ $pass = 0;
         <input type="button" class="smallc2 setNewPasswordCompletedSmallBtn" value="重新登入">
     </div>
 
- 
+
 
 
 
@@ -273,25 +274,26 @@ $pass = 0;
 </html>
 
 <script>
-    let code = document.querySelector(".hideCode");
-    let email = document.querySelector(".hideEmail");
+
+
     let cardClose = document.querySelector(".commCard .title img");
     let cardCloseSmall = document.querySelector(".commonCardSmall .title img ")
 
     if (cardClose) {
-        cardClose.addEventListener("click", function(e) {
+        cardClose.addEventListener("click", function (e) {
             document.querySelector(".commCard").style = "display:none";
         }, false)
     }
 
     if (cardCloseSmall) {
-        cardCloseSmall.addEventListener("click", function(e) {
+        cardCloseSmall.addEventListener("click", function (e) {
             document.querySelector(".commCardSmall").style = "display:none";
         }, false)
     }
 
 
-
+    let ConstEmail = "<?php echo $email; ?>"
+    const emailNum = ConstEmail.length
 
     let vertifyCode = document.querySelector(".vertifyCode");
     let vertifyCodeInput = document.querySelector(".vertifyCode .vertify input");
@@ -310,11 +312,11 @@ $pass = 0;
 
     let passwordStatus = 0;
 
-    $(document).ready(function() {
-        console.log(code.dataset.code);
+    $(document).ready(function () {
+
         if (vertifyCode) {
-            vertifyCodeBtn.addEventListener("click", function(e) {
-                if (vertifyCodeInput.value == code.dataset.code) {
+            vertifyCodeBtn.addEventListener("click", function (e) {
+                if (vertifyCodeInput.value == <?php echo $decode; ?>) {
                     vertifyCode.style = "display:none"
                     setNewPassword.style = "display: block; animation: toggleDown .5s;animation - fill - mode: forwards;"
                 } else {
@@ -322,7 +324,7 @@ $pass = 0;
                 }
             })
         }
-        NewPasswordBtn.addEventListener("click", function(e) {
+        NewPasswordBtn.addEventListener("click", function (e) {
             passwordStatus = 0;
             password1Str = NewPassword.value;
             password2Str = NewPasswordAgain.value;
@@ -342,19 +344,20 @@ $pass = 0;
 
             } else {
                 passwordStatus = 1;
-      
+
             }
             if (passwordStatus == 1) {
 
                 let dataArray = {
-                    email: email.dataset.email,
+                    email: ConstEmail,
                     password: password1Str,
+                    emailNum: emailNum
                 }
                 $.ajax({
                     type: "POST",
                     url: "user_changePassword.php",
                     data: dataArray,
-                    success: function(response) {
+                    success: function (response) {
                         console.log(response);
                         if (response == 1) {
                             setNewPasswordCompleted.style = "display: block; animation: toggleDown .5s;animation - fill - mode: forwards;";
@@ -373,12 +376,12 @@ $pass = 0;
     });
 
     let setNewPasswordCompletedBtn = document.querySelector(".setNewPasswordCompleted .inputGroup input");
-    setNewPasswordCompletedBtn.addEventListener("click", function(e) {
+    setNewPasswordCompletedBtn.addEventListener("click", function (e) {
         window.location.href = "../index.php";
     }, false)
 
     //手機板
-    $(document).ready(function() {
+    $(document).ready(function () {
         let vertificationCode = document.querySelector(".vertificationCode");
         let vertificationCodeInput = document.querySelector(".vertificationCode .Vertify input");
         let vertificationCodeBtn = document.querySelector(".vertificationCode .smallLoginBtn");
@@ -394,7 +397,7 @@ $pass = 0;
 
         if (vertificationCode) {
 
-            vertificationCodeBtn.addEventListener("click", function(e) {
+            vertificationCodeBtn.addEventListener("click", function (e) {
                 e.preventDefault();
                 if (vertificationCodeInput.value == code.dataset.code) {
                     vertificationCode.style = "display:none";
@@ -405,7 +408,7 @@ $pass = 0;
             }, false)
         }
 
-        setNewPasswordSmallBtn.addEventListener("click", function(e) {
+        setNewPasswordSmallBtn.addEventListener("click", function (e) {
             e.preventDefault();
             passwordStatus = 0;
             password1Str = setNewPasswordSmallPassword.value;
@@ -426,19 +429,22 @@ $pass = 0;
 
             } else {
                 passwordStatus = 1;
-    
+
             }
             if (passwordStatus == 1) {
 
+
                 let dataArray = {
-                    email: email.dataset.email,
+                    email: ConstEmail,
                     password: password1Str,
+                    emailNum: emailNum
+
                 }
                 $.ajax({
                     type: "POST",
                     url: "user_changePassword.php",
                     data: dataArray,
-                    success: function(response) {
+                    success: function (response) {
                         console.log(response);
                         if (response == 1) {
                             setNewPasswordSmall.style = "display:none"
@@ -456,7 +462,7 @@ $pass = 0;
             }
         }, false)
         if (setNewPasswordCompletedSmallBtn) {
-            setNewPasswordCompletedSmallBtn.addEventListener("click", function(e) {
+            setNewPasswordCompletedSmallBtn.addEventListener("click", function (e) {
                 window.location.href = "../index.php";
             })
         }

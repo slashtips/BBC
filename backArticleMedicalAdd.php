@@ -20,11 +20,16 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style>
+		.cookieHide{
+            display: none;
+        }
+	</style>
 </head>
 
 <body>
 	<div class="backMenu"></div>
-	<div class="container text-center">
+	<div class="container text-center cookieHide">
 		<h1>新增醫護園地文章</h1>
 		<form action="system/backArticleMedicalAddStore.php" method="post" enctype="multipart/form-data">
 			<div class="mb-3">
@@ -85,6 +90,8 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
 <script src="include/CkeEditor/build/ckeditor.js"></script>
 <script src="js/back.js"></script>
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
 	const watchdog = new CKSource.EditorWatchdog();
 
@@ -121,7 +128,7 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 </script>
 
 </html>
-<script src="js/back.js"></script>
+
 
 <script>
 	//Cookie讀取
@@ -152,4 +159,5 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 	}
 
 	CommonBack()
+	CookieShow()
 </script>

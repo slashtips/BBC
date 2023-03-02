@@ -78,6 +78,9 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
         .table-striped thead tr {
             white-space: nowrap;
         }
+        .cookieHide{
+            display: none;
+        }
     </style>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport"
@@ -94,7 +97,7 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 <body>
 
     <div class="backMenu"></div>
-    <div class="container">
+    <div class="container cookieHide">
         <div class="PageNumber text-end mt-4">
             <span>每頁分頁量</span> <input min="10" type="number" placeholder="最小為10">
             <input type="button" value="啟動分頁" class="btn btn-outline-success paginationBtn">
@@ -143,6 +146,8 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 
 </html>
 <script src="js/back.js"></script>
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 
 <script>
     //Cookie讀取
@@ -170,6 +175,7 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
     }
 
     CommonBack()
+    CookieShow();
 
     //分頁
     let table = document.querySelector('.table');

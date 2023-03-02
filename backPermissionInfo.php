@@ -92,6 +92,9 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
             max-width: 100px;
             max-height: 100px;
         }
+        .cookieHide{
+            display: none;
+        }
     </style>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport"
@@ -109,7 +112,7 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
     <div class="backMenu"></div>
 
 
-    <div class="container">
+    <div class="container cookieHide">
         <nav class="mt-3">
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
@@ -225,7 +228,8 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
 
 </html>
 <script src="js/back.js"></script>
-
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
     //Cookie讀取
     function parseCookie() {
@@ -255,4 +259,5 @@ $res3->setFetchMode(PDO::FETCH_ASSOC);
     }
     //CommonBack
     CommonBack()
+    CookieShow();
 </script>

@@ -22,7 +22,8 @@ use Aws\S3\Exception\S3Exception;
 
 // AWS Info
 $bucketName = 'roche-bbc';
-
+$IAM_KEY = 'AKIAVVSO6HJW3MUER3X7';
+$IAM_SECRET = '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';
 
 // Connect to AWS
 try {
@@ -30,7 +31,10 @@ try {
     // and on creation.
     $s3 = S3Client::factory(
         array(
-     
+            'credentials' => array(
+                'key' => $IAM_KEY,
+                'secret' => $IAM_SECRET
+            ),
             'version' => 'latest',
             'region' => 'ap-northeast-1'
         )
@@ -54,6 +58,7 @@ try {
     $s3->putObject(
         array(
             'Bucket' => $bucketName,
+            'Key' => $keyName,
             'SourceFile' => $file,
             'StorageClass' => 'REDUCED_REDUNDANCY'
         )

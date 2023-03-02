@@ -36,18 +36,22 @@ $date = date("Y-m-d H:i:s"); //日期
 $photoPath = "pic/Common/userNone.png";
 $title = "NotOpened";
 
-$sqlError = "SELECT COUNT(email) as email  FROM `users` WHERE email='$email'; ";
-$resError = $db->query($sqlError);
-$resError->setFetchMode(PDO::FETCH_ASSOC);
+$sqlError = "SELECT  *  FROM `users` WHERE email=:email; ";
+
+$stmt = $db->prepare($sqlError);
+$stmt->bindValue(':email', $email);
+
+$stmt->execute();
+$query2 = $stmt->fetchAll();
 
 $emailE = "";
 
-foreach ($resError as $rowError) {
-    $emailE = $rowError;
+foreach ($query2 as $rowError) {
+    $emailE = $rowError['id'];
 }
 
 
-if ($emailE == 1) {
+if ($emailE != "") {
     echo "0";
     exit();
 }

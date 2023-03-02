@@ -47,6 +47,7 @@ foreach ($query as $row) {
 </head>
 
 <body>
+
     <div class="wrap container">
         <h3>修改會員編號
             <?php echo $id; ?>的資料
@@ -117,7 +118,21 @@ foreach ($query as $row) {
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                 <form action='user_edit_delete.php' method='post'><input type='submit' class='btn btn-danger me-2'
-                        value='確定'> <input type='hidden' name='i' value='<?php echo $id; ?>'></form>
+                        value='確定'>
+                    <input type='hidden' name='i' value='<?php echo $id; ?>'>
+                    <input type='hidden' name='email' value='<?php echo $email; ?>'>
+                    <input type='hidden' name='firstName' value='<?php echo $firstName; ?>'>
+                    <input type='hidden' name='lastName' value='<?php echo $lastName; ?>'>
+                    <?php
+                    $emailNum = strlen($email);
+                    $firstNameNum = strlen($firstName);
+                    $lastNameNum = strlen($lastName);
+
+                    ?>
+                    <input type='hidden' name='emailNum' value='<?php echo $emailNum; ?>'>
+                    <input type='hidden' name='firstNameNum' value='<?php echo $firstNameNum; ?>'>
+                    <input type='hidden' name='lastNameNum' value='<?php echo $lastNameNum; ?>'>
+                </form>
             </div>
         </div>
     </div>
@@ -128,4 +143,9 @@ foreach ($query as $row) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
 <script src="../js/back.js"></script>
+<script src="../js/backF.js"></script>
+<script>ForceLogout2()</script>

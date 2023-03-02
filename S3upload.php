@@ -21,6 +21,7 @@ use Aws\S3\Exception\S3Exception;
 
 
 // AWS Info
+
 $bucketName = 'roche-bbc';
 $IAM_KEY = 'AKIAVVSO6HJW3MUER3X7';
 $IAM_SECRET = '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';

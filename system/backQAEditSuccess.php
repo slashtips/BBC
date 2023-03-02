@@ -1,5 +1,5 @@
 <?php
-include '../db/db.php';
+include  '../db/db.php';
 
 
 $title = $_POST["title"];
@@ -8,18 +8,8 @@ $content = $_POST["content"];
 
 $id = $_POST["id"];
 date_default_timezone_set('Asia/Taipei'); //時區
-$sql = "UPDATE `QA` SET  `title` = :title, `content` = :content,`topicSec` = :topicSec WHERE `QA`.`id` = :id;";
+$sql = "UPDATE `QA` SET  `title` = '$title', `content` = '$content',`topicSec` = '$topicSec', WHERE `QA`.`id` = $id;";
 
-
-$stmt = $db->prepare($sql);
-
-$stmt->bindValue(':title', $title);
-$stmt->bindValue(':content', $content);
-$stmt->bindValue(':topicSec', $topicSec);
-$stmt->bindValue(':id', $id);
-
-$stmt->execute();
-$query = $stmt->fetchAll();
-
-
+$res = $db->query($sql);
+$res->setFetchMode(PDO::FETCH_ASSOC);
 header("Location:../back_QA_EditInfo.php");

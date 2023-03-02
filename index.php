@@ -736,12 +736,9 @@ foreach ($resGA as $GA) {
     </div>
 </body>
 
-<script>
-
-</script>
-<script src="js/data.js"></script>
-<script src="js/index.js"></script>
 <script src="js/common.js"></script>
+<script src="js/index.js"></script>
+
 <script>
     let topicBtn = document.querySelectorAll(".bgWrap .tpBtn");
 

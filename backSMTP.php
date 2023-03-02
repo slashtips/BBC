@@ -48,6 +48,10 @@ foreach ($res as $row) {
             top: 70%;
             transform: translate(-50%, -50%);
         }
+
+        .cookieHide{
+            display: none;
+        }
     </style>
 </head>
 
@@ -55,7 +59,7 @@ foreach ($res as $row) {
 
 
     <div class="backMenu"></div>
-    <div class="container text-center">
+    <div class="container text-center cookieHide">
 
         <form class="SMTPForm" action="system/backSMTP.php" method="post">
             <h1>SMTP設定</h1>
@@ -148,7 +152,8 @@ foreach ($res as $row) {
 
 </html>
 <script src="js/back.js"></script>
-
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
     //Cookie讀取
     function parseCookie() {
@@ -192,6 +197,7 @@ foreach ($res as $row) {
     }
 
     CommonBack()
+    CookieShow();
 
 
     //SMTP測試

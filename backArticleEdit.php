@@ -60,6 +60,8 @@ $res2->setFetchMode(PDO::FETCH_ASSOC);
 
 <script src="include/CkeEditor/build/ckeditor.js"></script>
 <script src="js/back.js"></script>
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
 	const watchdog = new CKSource.EditorWatchdog();
 

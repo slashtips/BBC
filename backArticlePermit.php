@@ -137,7 +137,8 @@ $res->setFetchMode(PDO::FETCH_ASSOC);
 
 </html>
 <script src="js/back.js"></script>
-
+<script src="js/backF.js"></script>
+<script>ForceLogout()</script>
 <script>
     //Cookie讀取
     function parseCookie() {

@@ -2,10 +2,6 @@
 include 'db/db.php';
 $sql = "SELECT * FROM `article` where  `publish` = 1 ORDER BY id DESC";
 
-// $stmt = $db->prepare($sqlO);
-// $stmt->bindValue(':topicSec', "癌症分期");
-// $stmt->execute();
-
 $res = $db->query($sql);
 $res->setFetchMode(PDO::FETCH_ASSOC);
 
